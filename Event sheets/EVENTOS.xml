@@ -1,0 +1,942 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>EVENTOS</name>
+    <events>
+        <variable comment="ESTA E VIDA GLOBAL DE ORION " constant="0" name="VIDA_ORION_GLOBAL" sid="8661399569454908" static="0" type="number">3</variable>
+        <variable comment="placar de pontos" constant="0" name="pontos" sid="3403460222403003" static="0" type="number">0</variable>
+        <event-block sid="5948258338036993">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="5156121879195766" type="Keyboard">
+                    <param id="0" name="Key">82 (R)</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="4" name="Set animation" sid="9590780412684683" type="orion">
+                    <param id="0" name="Animation">&quot;especial_espada&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+                <action id="0" name="Spawn another object" sid="8063080399840252" type="orion">
+                    <param id="0" name="Object">espada_especial</param>
+                    <param id="1" name="Layer">2</param>
+                    <param id="2" name="Image point">2</param>
+                </action>
+                <action id="11" name="Set collisions enabled" sid="8237075590841984" type="espada_especial">
+                    <param id="0" name="Collisions">1</param>
+                </action>
+                <action id="-22" name="Set angle toward position" sid="5128206742726083" type="espada_especial">
+                    <param id="0" name="X">larryJR.X</param>
+                    <param id="1" name="Y">larryJR.Y</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="2432711120312728">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="5735633710164221" type="espada_especial">
+                    <param id="0" name="Object">larryJR</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="11" name="Set collisions enabled" sid="322937845616574" type="espada_especial">
+                    <param id="0" name="Collisions">1</param>
+                </action>
+                <action id="-12" name="Subtract from" sid="9336367236033039" type="larryJR">
+                    <param id="0" name="Instance variable">vida_Jr</param>
+                    <param id="1" name="Value">3</param>
+                </action>
+                <action behavior="Fade" id="1" name="Start fade" sid="8410971958285142" type="espada_especial" />
+                <action id="-15" name="Set visible" sid="9993650237147829" type="explosão_jr">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="0" name="Spawn another object" sid="5299409012868595" type="larryJR">
+                    <param id="0" name="Object">explosão_jr</param>
+                    <param id="1" name="Layer">2</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
+                <action id="-9" name="Destroy" sid="3918983141905314" type="espada_especial" />
+                <action id="-16" name="Wait" sid="7694319863566059" type="System">
+                    <param id="0" name="Seconds">0.5</param>
+                </action>
+                <action id="-9" name="Destroy" sid="6609383262617933" type="explosão_jr" />
+            </actions>
+        </event-block>
+        <event-block sid="2292423478105967">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="2088494844516553" type="Keyboard">
+                    <param id="0" name="Key">68 (D)</param>
+                </condition>
+            </conditions>
+            <actions />
+        </event-block>
+        <event-block sid="5322300988223042">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="899827141742559" type="Keyboard">
+                    <param id="0" name="Key">65 (A)</param>
+                </condition>
+            </conditions>
+            <actions />
+        </event-block>
+        <event-block sid="9548777028211008">
+            <conditions>
+                <condition id="2" name="Key is down" sid="2510733887056513" type="Keyboard">
+                    <param id="0" name="Key">87 (W)</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="Pin" id="0" name="Pin to object" sid="9930918762523191" type="escudo_orion">
+                    <param id="0" name="Pin to">orion</param>
+                    <param id="1" name="Mode">0</param>
+                </action>
+                <action id="0" name="Spawn another object" sid="6447579688371818" type="orion">
+                    <param id="0" name="Object">escudo_orion</param>
+                    <param id="1" name="Layer">2</param>
+                    <param id="2" name="Image point">1</param>
+                </action>
+                <action behavior="Flash" id="0" name="Flash" sid="3442816063969128" type="escudo_orion">
+                    <param id="0" name="&apos;On&apos; time">0.1</param>
+                    <param id="1" name="&apos;Off&apos; time">0.1</param>
+                    <param id="2" name="Duration">0.5</param>
+                </action>
+                <action id="-16" name="Wait" sid="6917077158363172" type="System">
+                    <param id="0" name="Seconds">2.0</param>
+                </action>
+                <action behavior="Pin" id="1" name="Unpin" sid="4919523445884912" type="escudo_orion" />
+                <action id="-9" name="Destroy" sid="2740211727210374" type="escudo_orion" />
+            </actions>
+        </event-block>
+        <event-block sid="4798147463576255">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="6855203335976777" type="Keyboard">
+                    <param id="0" name="Key">81 (Q)</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="11" name="Set collisions enabled" sid="4868097099744198" type="espada">
+                    <param id="0" name="Collisions">1</param>
+                </action>
+                <action behavior="Pin" id="0" name="Pin to object" sid="8537360853043218" type="espada">
+                    <param id="0" name="Pin to">orion</param>
+                    <param id="1" name="Mode">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="1743555245822885" type="espada">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="0" name="Spawn another object" sid="8209096301575704" type="orion">
+                    <param id="0" name="Object">espada</param>
+                    <param id="1" name="Layer">2</param>
+                    <param id="2" name="Image point">2</param>
+                </action>
+                <action id="4" name="Set animation" sid="9147240433684375" type="orion">
+                    <param id="0" name="Animation">&quot;ataque&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+                <action disabled="1" id="-9" name="Destroy" sid="2455792230159725" type="espada" />
+            </actions>
+            <sub-events>
+                <event-block sid="5875507505135197">
+                    <conditions>
+                        <condition behavior="Platform" id="0" name="Is moving" sid="5325279479033619" type="bgorion" />
+                        <condition behavior="Platform" id="0" inverted="1" name="Is moving" sid="7080304166209578" type="bgorion" />
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="5543207923683944" type="orion">
+                            <param id="0" name="Animation">&quot;correndo_espada&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                        <action id="4" name="Set animation" sid="6184804302176079" type="orion">
+                            <param id="0" name="Animation">&quot;Default&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="8466653903297334">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="6211246084557845" type="Keyboard">
+                    <param id="0" name="Key">69 (E)</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Spawn another object" sid="5454867728559655" type="orion">
+                    <param id="0" name="Object">estrela</param>
+                    <param id="1" name="Layer">2</param>
+                    <param id="2" name="Image point">1</param>
+                </action>
+                <action behavior="Flash" id="0" name="Flash" sid="5927894873009537" type="estrela">
+                    <param id="0" name="&apos;On&apos; time">0.1</param>
+                    <param id="1" name="&apos;Off&apos; time">0.1</param>
+                    <param id="2" name="Duration">1.0</param>
+                </action>
+                <action id="4" name="Set animation" sid="1891438787174088" type="estrela">
+                    <param id="0" name="Animation">&quot;ataquesEstrela&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+                <action id="-22" name="Set angle toward position" sid="5200462007542665" type="estrela">
+                    <param id="0" name="X">larryJR.X</param>
+                    <param id="1" name="Y">larryJR.Y</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="8191855627100991">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="7216632345292815" type="estrela">
+                    <param id="0" name="Object">larryJR</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="Flash" id="0" name="Flash" sid="9522792910616218" type="larryJR">
+                    <param id="0" name="&apos;On&apos; time">0.1</param>
+                    <param id="1" name="&apos;Off&apos; time">0.1</param>
+                    <param id="2" name="Duration">1.0</param>
+                </action>
+                <action id="-12" name="Subtract from" sid="7889424976590884" type="larryJR">
+                    <param id="0" name="Instance variable">vida_Jr</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="-9" name="Destroy" sid="6687384909146671" type="estrela" />
+                <action id="-15" name="Set visible" sid="8491703268458427" type="explosão_jr">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="0" name="Spawn another object" sid="374556656418369" type="larryJR">
+                    <param id="0" name="Object">explosão_jr</param>
+                    <param id="1" name="Layer">2</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
+                <action id="-16" name="Wait" sid="7983259815205039" type="System">
+                    <param id="0" name="Seconds">0.5</param>
+                </action>
+                <action id="-9" name="Destroy" sid="4617003077443994" type="explosão_jr" />
+            </actions>
+        </event-block>
+        <event-block sid="9354101726730465">
+            <conditions>
+                <condition id="-6" name="Every X seconds" sid="6986946957685252" type="System">
+                    <param id="0" name="Interval (seconds)">choose(1,1,1,2,2,2,2,2,2,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,4,4,4,4,4,5,5,5,5,5,6,6,6,6,6,6,7,7,7,7,7,7,8,8,8,8,8,8,9,9,9,9,9,10,10,10,10,11,12)</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-3" name="Create object" sid="1843483133374348" type="System">
+                    <param id="0" name="Object to create">boxLarryJr</param>
+                    <param id="1" name="Layer">2</param>
+                    <param id="2" name="X">orion.X+450</param>
+                    <param id="3" name="Y">orion.Y-40</param>
+                </action>
+                <action id="-3" name="Create object" sid="2503198705083156" type="System">
+                    <param id="0" name="Object to create">larryJR</param>
+                    <param id="1" name="Layer">2</param>
+                    <param id="2" name="X">orion.X+450</param>
+                    <param id="3" name="Y">orion.Y-40</param>
+                </action>
+                <action id="-15" name="Set visible" sid="4435023090318017" type="larryJR">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action behavior="Pin" id="0" name="Pin to object" sid="3111575317765867" type="larryJR">
+                    <param id="0" name="Pin to">boxLarryJr</param>
+                    <param id="1" name="Mode">0</param>
+                </action>
+                <action id="4" name="Set animation" sid="4888449943512189" type="larryJR">
+                    <param id="0" name="Animation">&quot;rastejando_jr&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+                <action id="-15" name="Set visible" sid="7471381783753529" type="boxLarryJr">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action behavior="Sine" id="0" name="Set active" sid="8832961745312521" type="boxLarryJr">
+                    <param id="0" name="State">1</param>
+                </action>
+                <action behavior="Sine" id="2" name="Set magnitude" sid="1172391173302545" type="boxLarryJr">
+                    <param id="0" name="Magnitude">random(1000)</param>
+                </action>
+                <action behavior="Sine" id="1" name="Set period" sid="2409276443908204" type="boxLarryJr">
+                    <param id="0" name="Period">random(1000)</param>
+                </action>
+                <action behavior="Sine" id="3" name="Set movement" sid="6087074483693178" type="boxLarryJr">
+                    <param id="0" name="Movement">0</param>
+                </action>
+                <action behavior="Sine" id="0" name="Set active" sid="7280303137528315" type="larryJR">
+                    <param id="0" name="State">1</param>
+                </action>
+                <action behavior="Sine" id="2" name="Set magnitude" sid="7810693354521178" type="larryJR">
+                    <param id="0" name="Magnitude">random(1000)</param>
+                </action>
+                <action behavior="Sine" id="1" name="Set period" sid="7959841277139913" type="larryJR">
+                    <param id="0" name="Period">random(1000)</param>
+                </action>
+                <action behavior="Sine" id="3" name="Set movement" sid="5784415496507197" type="larryJR">
+                    <param id="0" name="Movement">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="6770078216213737">
+            <conditions>
+                <condition disabled="1" id="-6" name="Every X seconds" sid="2638065961046909" type="System">
+                    <param id="0" name="Interval (seconds)">choose(1,2,3,4,5,6,7,7,8,8,8,9,9,9,9,9,10)</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action disabled="1" id="-3" name="Create object" sid="6377575266108119" type="System">
+                    <param id="0" name="Object to create">larryJR</param>
+                    <param id="1" name="Layer">2</param>
+                    <param id="2" name="X">orion.x-300</param>
+                    <param id="3" name="Y">orion.Y-100</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="6598576064714991">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="5901701547159417" type="orion">
+                    <param id="0" name="Object">larryJR</param>
+                </condition>
+                <condition id="-7" name="Compare instance variable" sid="1784961105575641" type="orion">
+                    <param id="0" name="Instance variable">vida_orion</param>
+                    <param id="1" name="Comparison">4</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+                <condition id="-7" name="Compare instance variable" sid="5668337038583288" type="orion">
+                    <param id="0" name="Instance variable">receberdano</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="Flash" id="0" name="Flash" sid="1459782327700626" type="orion">
+                    <param id="0" name="&apos;On&apos; time">0.1</param>
+                    <param id="1" name="&apos;Off&apos; time">0.1</param>
+                    <param id="2" name="Duration">1.0</param>
+                </action>
+                <action id="-12" name="Subtract from" sid="5294303745038149" type="orion">
+                    <param id="0" name="Instance variable">vida_orion</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="-11" name="Subtract from" sid="6630006319795534" type="System">
+                    <param id="0" name="Variable">VIDA_ORION_GLOBAL</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="-10" name="Set value" sid="1532568876006522" type="orion">
+                    <param id="0" name="Instance variable">receberdano</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="-16" name="Wait" sid="5065623223268043" type="System">
+                    <param id="0" name="Seconds">2.0</param>
+                </action>
+                <action id="-10" name="Set value" sid="9824152139396175" type="orion">
+                    <param id="0" name="Instance variable">receberdano</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="3668757476668605">
+            <conditions>
+                <condition id="-1" name="Every tick" sid="7298991022796484" type="System" />
+            </conditions>
+            <actions>
+                <action id="0" name="Set text" sid="3427005432645897" type="pontos">
+                    <param id="0" name="Text">pontos</param>
+                </action>
+                <action id="-5" name="Set width" sid="8116237844487692" type="vida">
+                    <param id="0" name="Width">orion.vida_orion*40</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="2117514796273999">
+            <conditions>
+                <condition id="-7" name="Compare instance variable" sid="3444554144441338" type="larryJR">
+                    <param id="0" name="Instance variable">vida_Jr</param>
+                    <param id="1" name="Comparison">3</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="Flash" id="0" name="Flash" sid="9905477908131604" type="larryJR">
+                    <param id="0" name="&apos;On&apos; time">0.1</param>
+                    <param id="1" name="&apos;Off&apos; time">0.1</param>
+                    <param id="2" name="Duration">1.0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="3898900936186427" type="explosão_jr">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="0" name="Spawn another object" sid="4285353053400518" type="larryJR">
+                    <param id="0" name="Object">explosão_jr</param>
+                    <param id="1" name="Layer">2</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
+                <action id="-9" name="Destroy" sid="839120929391881" type="larryJR" />
+                <action id="-16" name="Wait" sid="9789175747234542" type="System">
+                    <param id="0" name="Seconds">0.5</param>
+                </action>
+                <action id="-9" name="Destroy" sid="5483860267410971" type="explosão_jr" />
+                <action id="-10" name="Add to" sid="1935815310175255" type="System">
+                    <param id="0" name="Variable">pontos</param>
+                    <param id="1" name="Value">5</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="5076795760502733">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="265472941587413" type="orion">
+                    <param id="0" name="Object">moedaazul</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="11" name="Set collisions enabled" sid="9785122700933086" type="moedaazul">
+                    <param id="0" name="Collisions">1</param>
+                </action>
+                <action id="-10" name="Add to" sid="9472162009189526" type="System">
+                    <param id="0" name="Variable">pontos</param>
+                    <param id="1" name="Value">100</param>
+                </action>
+                <action behavior="Flash" id="0" name="Flash" sid="9513671549556397" type="moedaazul">
+                    <param id="0" name="&apos;On&apos; time">0.1</param>
+                    <param id="1" name="&apos;Off&apos; time">0.1</param>
+                    <param id="2" name="Duration">1.0</param>
+                </action>
+                <action id="-9" name="Destroy" sid="957120008453361" type="moedaazul" />
+            </actions>
+        </event-block>
+        <event-block sid="7787194201145894">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="686778087953399" type="espada">
+                    <param id="0" name="Object">larryJR</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-12" name="Subtract from" sid="6725052164622294" type="larryJR">
+                    <param id="0" name="Instance variable">vida_Jr</param>
+                    <param id="1" name="Value">3</param>
+                </action>
+                <action id="-9" name="Destroy" sid="1305911201121527" type="espada" />
+                <action id="-15" name="Set visible" sid="1125096034347833" type="explosão_jr">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="0" name="Spawn another object" sid="4529106269627339" type="larryJR">
+                    <param id="0" name="Object">explosão_jr</param>
+                    <param id="1" name="Layer">2</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
+                <action id="-16" name="Wait" sid="5620615483668084" type="System">
+                    <param id="0" name="Seconds">0.5</param>
+                </action>
+                <action id="-9" name="Destroy" sid="8487714091840926" type="explosão_jr" />
+            </actions>
+        </event-block>
+        <event-block disabled="1" sid="5419472062779972">
+            <conditions>
+                <condition disabled="1" id="-7" name="Compare instance variable" sid="4064477255253139" type="orion">
+                    <param id="0" name="Instance variable">target_orion</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions />
+        </event-block>
+        <event-block disabled="1" sid="5125919233106576">
+            <conditions>
+                <condition id="-7" name="Compare instance variable" sid="1872052727534336" type="orion">
+                    <param id="0" name="Instance variable">target_orion</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+            </conditions>
+            <actions />
+        </event-block>
+        <event-block disabled="1" sid="4685512980817985">
+            <conditions>
+                <condition id="-1" name="Compare X" sid="892380384660045" type="orion">
+                    <param id="0" name="Comparison">2</param>
+                    <param id="1" name="X co-ordinate">larryJR.X+5</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action disabled="1" id="-10" name="Set value" sid="5490925617104654" type="orion">
+                    <param id="0" name="Instance variable">target_orion</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block disabled="1" sid="9410932267989291">
+            <conditions>
+                <condition id="-1" name="Compare X" sid="8922249469914276" type="orion">
+                    <param id="0" name="Comparison">4</param>
+                    <param id="1" name="X co-ordinate">larryJR.X-5</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action disabled="1" id="-10" name="Set value" sid="3128035094317174" type="orion">
+                    <param id="0" name="Instance variable">target_orion</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="880990035476121">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="6013977151044297" type="System" />
+            </conditions>
+            <actions>
+                <action behavior="Pin" id="0" name="Pin to object" sid="1369680548011777" type="orion">
+                    <param id="0" name="Pin to">bgorion</param>
+                    <param id="1" name="Mode">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="8290583434181722" type="bgorion">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action behavior="Pin" id="0" name="Pin to object" sid="2569902458666719" type="larryJR">
+                    <param id="0" name="Pin to">boxLarryJr</param>
+                    <param id="1" name="Mode">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="3045187892935245" type="boxLarryJr">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="4" name="Set animation" sid="5831722322040764" type="moedaazul">
+                    <param id="0" name="Animation">&quot;Default&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+                <action behavior="Pin" id="0" name="Pin to object" sid="7330613467176998" type="campo_jr">
+                    <param id="0" name="Pin to">boxLarryJr</param>
+                    <param id="1" name="Mode">0</param>
+                </action>
+                <action behavior="Pin" id="0" name="Pin to object" sid="7787584725673661" type="campo_jr">
+                    <param id="0" name="Pin to">larryJR</param>
+                    <param id="1" name="Mode">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="9225900531312195" type="larryJR">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="-9" name="Destroy" sid="7014433207088866" type="espada_especial" />
+            </actions>
+        </event-block>
+        <event-block sid="8234542533006177">
+            <conditions>
+                <condition behavior="Platform" id="8" name="On moved" sid="3935307762257911" type="bgorion" />
+            </conditions>
+            <actions>
+                <action id="4" name="Set animation" sid="6612933643401486" type="orion">
+                    <param id="0" name="Animation">&quot;correndo_espada&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="9858912945208546">
+            <conditions>
+                <condition behavior="Platform" id="7" name="On stopped" sid="7334603522497571" type="bgorion" />
+            </conditions>
+            <actions>
+                <action id="4" name="Set animation" sid="2315499046344591" type="orion">
+                    <param id="0" name="Animation">&quot;Default&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="8912252207189031">
+            <conditions>
+                <condition id="2" name="Key is down" sid="95460143621139" type="Keyboard">
+                    <param id="0" name="Key">37 (Left arrow)</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="7" name="Set mirrored" sid="7659374955329549" type="orion">
+                    <param id="0" name="State">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="195485550069248">
+            <conditions>
+                <condition id="2" name="Key is down" sid="3924891608634111" type="Keyboard">
+                    <param id="0" name="Key">39 (Right arrow)</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="7" name="Set mirrored" sid="1407070670059743" type="orion">
+                    <param id="0" name="State">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="5838500632038294">
+            <conditions>
+                <condition behavior="Platform" id="5" name="On jump" sid="68496965368318" type="bgorion" />
+            </conditions>
+            <actions>
+                <action id="4" name="Set animation" sid="5689279820523911" type="orion">
+                    <param id="0" name="Animation">&quot;pulo_espada&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="1472098182635091">
+                    <conditions>
+                        <condition behavior="Platform" disabled="1" id="0" name="Is moving" sid="6240961199344654" type="bgorion" />
+                        <condition behavior="Platform" disabled="1" id="0" inverted="1" name="Is moving" sid="1502692682665338" type="bgorion" />
+                    </conditions>
+                    <actions>
+                        <action disabled="1" id="4" name="Set animation" sid="5260183737531121" type="orion">
+                            <param id="0" name="Animation">&quot;pulo&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                        <action disabled="1" id="4" name="Set animation" sid="4231656399119351" type="orion">
+                            <param id="0" name="Animation">&quot;Default&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="4284719611679131">
+            <conditions>
+                <condition behavior="Platform" id="9" name="On landed" sid="1770069291820455" type="bgorion" />
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="8898489513960225">
+                    <conditions>
+                        <condition behavior="Platform" id="0" name="Is moving" sid="718956712373715" type="bgorion" />
+                        <condition behavior="Platform" id="0" inverted="1" name="Is moving" sid="8714880744903649" type="bgorion" />
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="1102790463086894" type="orion">
+                            <param id="0" name="Animation">&quot;correndo_espada&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                        <action id="4" name="Set animation" sid="3439456186940676" type="orion">
+                            <param id="0" name="Animation">&quot;Default&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="739940921595658">
+            <conditions>
+                <condition behavior="Platform" disabled="1" id="10" name="Is by wall" sid="7816686384186823" type="bgorion">
+                    <param id="0" name="Side">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action disabled="1" id="4" name="Set animation" sid="439186560493214" type="orion">
+                    <param id="0" name="Animation">&quot;Default&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="5251995628392867">
+            <conditions>
+                <condition behavior="Platform" disabled="1" id="10" name="Is by wall" sid="1673361407222773" type="bgorion">
+                    <param id="0" name="Side">1</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action disabled="1" id="4" name="Set animation" sid="2867632004953238" type="orion">
+                    <param id="0" name="Animation">&quot;Default&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="4508664253231022">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="7717184514434814" type="System">
+                    <param id="0" name="Variable">VIDA_ORION_GLOBAL</param>
+                    <param id="1" name="Comparison">3</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+                <condition id="-7" name="Compare instance variable" sid="8174796472024647" type="orion">
+                    <param id="0" name="Instance variable">vida_orion</param>
+                    <param id="1" name="Comparison">3</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="21516597182629" type="orion" />
+                <action id="-4" name="Set position to another object" sid="3729081651959506" type="gameover">
+                    <param id="0" name="Object">orion</param>
+                    <param id="1" name="Image point (optional)">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="5231641082591517" type="gameover">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="-3" name="Set position" sid="9367117962797104" type="gameover">
+                    <param id="0" name="X">orion.X</param>
+                    <param id="1" name="Y">orion.Y-300</param>
+                </action>
+                <action id="0" name="Set text" sid="2152575360650216" type="gameover">
+                    <param id="0" name="Text">&quot;GAME OVER&quot; </param>
+                </action>
+                <action behavior="Flash" id="0" name="Flash" sid="4409092175899443" type="gameover">
+                    <param id="0" name="&apos;On&apos; time">0.1</param>
+                    <param id="1" name="&apos;Off&apos; time">0.1</param>
+                    <param id="2" name="Duration">1.0</param>
+                </action>
+                <action id="-16" name="Wait" sid="3866964223345641" type="System">
+                    <param id="0" name="Seconds">4</param>
+                </action>
+                <action id="-21" name="Reset global variables" sid="7639499958736571" type="System" />
+                <action id="-26" name="Restart layout" sid="9840280273891798" type="System" />
+            </actions>
+        </event-block>
+        <event-block sid="3673732335319342">
+            <conditions>
+                <condition disabled="1" id="-7" name="Compare instance variable" sid="4951989521507068" type="boxLarryJr">
+                    <param id="0" name="Instance variable">direcao_boxJr</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="Platform" disabled="1" id="7" name="Simulate control" sid="718276629840698" type="boxLarryJr">
+                    <param id="0" name="Control">0</param>
+                </action>
+                <action disabled="1" id="7" name="Set mirrored" sid="4527602184787892" type="larryJR">
+                    <param id="0" name="State">1</param>
+                </action>
+                <action disabled="1" id="4" name="Set animation" sid="2508360504666643" type="larryJR">
+                    <param id="0" name="Animation">&quot;rastejando_jr&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="4153439459848606">
+            <conditions>
+                <condition disabled="1" id="-7" name="Compare instance variable" sid="3807241317999145" type="boxLarryJr">
+                    <param id="0" name="Instance variable">direcao_boxJr</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">2</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="Platform" disabled="1" id="7" name="Simulate control" sid="1118519638713299" type="boxLarryJr">
+                    <param id="0" name="Control">1</param>
+                </action>
+                <action disabled="1" id="7" name="Set mirrored" sid="6907754703917906" type="larryJR">
+                    <param id="0" name="State">1</param>
+                </action>
+                <action disabled="1" id="4" name="Set animation" sid="6326735620537864" type="larryJR">
+                    <param id="0" name="Animation">&quot;rastejando_jr&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="6993036250109171">
+            <conditions>
+                <condition disabled="1" id="-1" name="Compare X" sid="7133804909755979" type="boxLarryJr">
+                    <param id="0" name="Comparison">0</param>
+                    <param id="1" name="X co-ordinate">orion.X</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action disabled="1" id="-10" name="Set value" sid="7996520273308498" type="boxLarryJr">
+                    <param id="0" name="Instance variable">direcao_boxJr</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="1669759804032276">
+            <conditions>
+                <condition disabled="1" id="-1" name="Compare X" sid="6455569493535254" type="boxLarryJr">
+                    <param id="0" name="Comparison">0</param>
+                    <param id="1" name="X co-ordinate">orion.X-5</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action disabled="1" id="-10" name="Set value" sid="951707750803016" type="boxLarryJr">
+                    <param id="0" name="Instance variable">direcao_boxJr</param>
+                    <param id="1" name="Value">2</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="2039009930964997">
+            <conditions>
+                <condition behavior="Platform" disabled="1" id="8" name="On moved" sid="1132260486171743" type="boxLarryJr" />
+            </conditions>
+            <actions>
+                <action disabled="1" id="4" name="Set animation" sid="8273782279033546" type="larryJR">
+                    <param id="0" name="Animation">&quot;rastejando_jr&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="3135852548067001">
+            <conditions>
+                <condition behavior="Platform" disabled="1" id="7" name="On stopped" sid="434203021849368" type="boxLarryJr" />
+            </conditions>
+            <actions>
+                <action disabled="1" id="4" name="Set animation" sid="7460322694600633" type="larryJR">
+                    <param id="0" name="Animation">&quot;rastejando_jr&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="5388485869631071">
+            <conditions>
+                <condition behavior="Platform" disabled="1" id="9" name="On landed" sid="6545245676541126" type="boxLarryJr" />
+            </conditions>
+            <actions>
+                <action disabled="1" id="4" name="Set animation" sid="240087475461165" type="larryJR">
+                    <param id="0" name="Animation">&quot;rastejando_jr&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="762619945469672">
+                    <conditions>
+                        <condition behavior="Platform" id="0" name="Is moving" sid="2067516376195251" type="boxLarryJr" />
+                        <condition behavior="Platform" id="0" inverted="1" name="Is moving" sid="9901254478732811" type="boxLarryJr" />
+                    </conditions>
+                    <actions>
+                        <action disabled="1" id="4" name="Set animation" sid="7396725483987737" type="larryJR">
+                            <param id="0" name="Animation">&quot;parado_jr&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="8391507924814495">
+            <conditions>
+                <condition behavior="Platform" disabled="1" id="10" name="Is by wall" sid="7933786472275774" type="boxLarryJr">
+                    <param id="0" name="Side">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="Platform" disabled="1" id="7" name="Simulate control" sid="9796078615344387" type="boxLarryJr">
+                    <param id="0" name="Control">2</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="4680075342926075">
+            <conditions>
+                <condition behavior="Platform" disabled="1" id="10" name="Is by wall" sid="4195250841200096" type="boxLarryJr">
+                    <param id="0" name="Side">1</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="Platform" disabled="1" id="7" name="Simulate control" sid="361081139791958" type="boxLarryJr">
+                    <param id="0" name="Control">2</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="3699337974225525">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="7584702506761487" type="vidaExtra">
+                    <param id="0" name="Object">orion</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="Flash" id="0" name="Flash" sid="6252917737619779" type="vidaExtra">
+                    <param id="0" name="&apos;On&apos; time">0.1</param>
+                    <param id="1" name="&apos;Off&apos; time">0.1</param>
+                    <param id="2" name="Duration">1.0</param>
+                </action>
+                <action id="-11" name="Add to" sid="8639088562300375" type="orion">
+                    <param id="0" name="Instance variable">vida_orion</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="-10" name="Add to" sid="6331020578401397" type="System">
+                    <param id="0" name="Variable">VIDA_ORION_GLOBAL</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="-5" name="Set width" sid="2112459782696378" type="vida">
+                    <param id="0" name="Width">orion.vida_orion*40</param>
+                </action>
+                <action id="-9" name="Destroy" sid="6742051764653483" type="vidaExtra" />
+            </actions>
+        </event-block>
+        <event-block sid="6158353242977597">
+            <conditions>
+                <condition id="-19" name="On destroyed" sid="6673943209004129" type="vidaExtra" />
+                <condition id="-1" name="Every tick" sid="7220785565291325" type="System" />
+            </conditions>
+            <actions>
+                <action id="-5" name="Set width" sid="7634505683925422" type="vida">
+                    <param id="0" name="Width">orion.vida_orion*40</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="1862763882307891">
+            <conditions>
+                <condition disabled="1" id="0" name="On collision with another object" sid="4904328131034024" type="campo_jr">
+                    <param id="0" name="Object">orion</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action disabled="1" id="0" name="Spawn another object" sid="9887484935105754" type="larryJR">
+                    <param id="0" name="Object">larryJR</param>
+                    <param id="1" name="Layer">2</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="3896506511129443">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="6358800353441218" type="trofeu">
+                    <param id="0" name="Object">orion</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="Flash" id="0" name="Flash" sid="1068845892446511" type="trofeu">
+                    <param id="0" name="&apos;On&apos; time">0.1</param>
+                    <param id="1" name="&apos;Off&apos; time">0.1</param>
+                    <param id="2" name="Duration">1.0</param>
+                </action>
+                <action id="-9" name="Destroy" sid="5798640996988893" type="trofeu" />
+            </actions>
+        </event-block>
+        <event-block sid="3833774512088834">
+            <conditions>
+                <condition id="-19" name="On destroyed" sid="2622447953088037" type="trofeu" />
+                <condition id="-1" name="Every tick" sid="5388435994731767" type="System" />
+            </conditions>
+            <actions>
+                <action disabled="1" id="-5" name="Set width" sid="8653856459192931" type="orion">
+                    <param id="0" name="Width">orion.Width</param>
+                </action>
+                <action disabled="1" id="-6" name="Set height" sid="4367649341292888" type="orion">
+                    <param id="0" name="Height">orion.Height</param>
+                </action>
+                <action behavior="Platform" id="11" name="Set enabled" sid="2309578333159985" type="bgorion">
+                    <param id="0" name="State">0</param>
+                </action>
+                <action id="4" name="Set animation" sid="426451747184902" type="orion">
+                    <param id="0" name="Animation">&quot;vitoria&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+                <action disabled="1" id="-16" name="Wait" sid="74373821362504" type="System">
+                    <param id="0" name="Seconds">1</param>
+                </action>
+                <action id="-15" name="Set visible" sid="2614794318901603" type="vitoria">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="-3" name="Set position" sid="4196350129611172" type="vitoria">
+                    <param id="0" name="X">orion.X</param>
+                    <param id="1" name="Y">orion.Y-300</param>
+                </action>
+                <action id="0" name="Set text" sid="8006563007563242" type="vitoria">
+                    <param id="0" name="Text">&quot;RECUPERAMOS O PODER DA ESTRELA !&quot;&amp;newline&amp;&quot;RECEBA 10.000 PONTOS DE RECOMPENSA !&quot;</param>
+                </action>
+                <action id="-10" name="Add to" sid="5914390963697097" type="System">
+                    <param id="0" name="Variable">pontos</param>
+                    <param id="1" name="Value">10000</param>
+                </action>
+                <action id="-16" name="Wait" sid="2204583744567956" type="System">
+                    <param id="0" name="Seconds">6</param>
+                </action>
+                <action id="-26" name="Restart layout" sid="7214815139322056" type="System" />
+            </actions>
+        </event-block>
+        <event-block sid="5954207664855548">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="5405653938267547" type="larryJR">
+                    <param id="0" name="Object">escudo_orion</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-12" name="Subtract from" sid="6739035799938402" type="larryJR">
+                    <param id="0" name="Instance variable">vida_Jr</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action behavior="Flash" id="0" name="Flash" sid="9410719264254759" type="larryJR">
+                    <param id="0" name="&apos;On&apos; time">0.1</param>
+                    <param id="1" name="&apos;Off&apos; time">0.1</param>
+                    <param id="2" name="Duration">1.0</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>
